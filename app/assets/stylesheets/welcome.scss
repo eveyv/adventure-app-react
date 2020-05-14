@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body, header {
+  background-color: #228B22;
+  color: white;
+  text-align: center;
+  font-family: "Fredoka One", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Fredoka One", sans-serif;
+}
+
+.link {
+  background-color: white;
+  border-radius: 5px 5px 5px 5px;
+  color: #228B22;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right:5px;
+}
+
+.link:hover {
+  background-color: white;
+  border-radius: 5px 5px 5px 5px;
+  color: #228B22;
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right:5px;
+  cursor: alias;
+}
+
+.balance-home-header {
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.logo-text {
+  text-align: left;
+}
