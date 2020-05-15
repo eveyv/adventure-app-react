@@ -39,7 +39,7 @@ const NewDestination = props => {
 
 return(
   <div>
-    <NewDestinationForm
+    <NDestinationForm
       onSubmit={setNewDestination}
     />
   </div>

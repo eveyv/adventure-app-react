@@ -22,7 +22,7 @@ class Api::V1::DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.permit(:id, :name, :state, :type, :address, :activities, :cost, :price, :website)
+    params.permit(:id, :name, :activities, :state, :address,  :cost, :price, :website)
   end
 
 end
