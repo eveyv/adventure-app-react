@@ -1,6 +1,8 @@
 import React, { useState }  from 'react'
 import _ from "lodash"
 import ErrorList from "./ErrorList"
+import CheckboxRender from './CheckboxRender'
+
 
 const DestinationForm = props => {
   const [ errors, setErrors ] = useState({})
@@ -67,6 +69,8 @@ const DestinationForm = props => {
             onChange={handleInputChange}
             />
           </label>
+          <CheckboxRender
+          />
           <label className="form-text">
             * State:
               <select
@@ -84,22 +88,6 @@ const DestinationForm = props => {
               </select>
             </label>
             <label className="form-text">
-              * What type of activity is this?
-                <select
-                  id="activities"
-                  name="activities"
-                  value={newDestination.activities}
-                  onChange={handleInputChange}>
-                    <option value="Hiking">Hiking</option>
-                    <option value="Boating">Boating/Kayaking</option>
-                    <option value="Camping">Camping</option>
-                    <option value="Dog Park">Dog Park</option>
-                    <option value="Jogging">Jogging</option>
-                    <option value="Skiing">Skiing/Snowboarding</option>
-                    <option value="Snowmobiling">Snowmobiling</option>
-              </select>
-            </label>
-            <label className="form-text">
               * Access Point (Street Address):
               <input
                 id="address"
@@ -112,32 +100,32 @@ const DestinationForm = props => {
               <label className="form-text">
                 Is there a fee?
                 <input
-                id="cost"
-                type="text"
-                name="cost"
-                value={newDestination.cost}
-                onChange={handleInputChange}
+                  id="cost"
+                  type="text"
+                  name="cost"
+                  value={newDestination.cost}
+                  onChange={handleInputChange}
                 />
               </label>
               <label className="form-text">
                 If there is a charge, how much is it?
                 <input
-                id="price"
-                type="text"
-                name="price"
-                value={newDestination.price}
-                onChange={handleInputChange}
+                  id="price"
+                  type="text"
+                  name="price"
+                  value={newDestination.price}
+                  onChange={handleInputChange}
                 />
               </label>
               <label className="form-text">
-              Is there a website?
-              <input
-              id="website"
-              type="text"
-              name="website"
-              value={newDestination.website}
-              onChange={handleInputChange}>
-              </input>
+                Is there a website?
+                <input
+                  id="website"
+                  type="text"
+                  name="website"
+                  value={newDestination.website}
+                  onChange={handleInputChange}>
+                </input>
               </label>
               <input
               type="submit"
