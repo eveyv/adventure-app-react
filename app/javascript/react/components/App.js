@@ -15,6 +15,7 @@ export const App = (props) => {
           <Route exact path="/" component={Welcome} />
           <Route exact path="/destinations/new" component={NewDestinationForm} />
           <Route exact path="/states" component={StatesListContainer} />
+          <Route exact path="/destinations/:id" component={DestinationShow} />
         </Switch>
       </BrowserRouter>
     </div>
