@@ -4,7 +4,7 @@ import ErrorList from "./ErrorList"
 import CheckboxRender from './CheckboxRender'
 
 
-const DestinationForm = props => {
+const NewDestinationForm = props => {
   const [ errors, setErrors ] = useState({})
   const [ newDestination, setNewDestination ] = useState({
     name: "",
@@ -136,4 +136,4 @@ const DestinationForm = props => {
   )
 }
 
-export default DestinationForm;
+export default NewDestinationForm;

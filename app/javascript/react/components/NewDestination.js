@@ -31,15 +31,14 @@ const NewDestination = props => {
       setShouldRedirect(true)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
-
+    }
   if(shouldRedirect) {
-    return <Redirect to="/states" />
+    return <Redirect to="/" />
   }
 
 return(
   <div>
-    <NDestinationForm
+    <NewDestinationForm
       onSubmit={setNewDestination}
     />
   </div>
