@@ -5,6 +5,7 @@ import '../../../assets/stylesheets/welcome.scss'
 import Welcome from './Welcome'
 import NewDestinationForm from './NewDestinationForm'
 import StatesListContainer from './StatesListContainer'
+import DestinationShow from './DestinationShow'
 
 export const App = (props) => {
   return (
