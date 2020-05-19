@@ -16,7 +16,6 @@ class CheckboxRender extends Component {
 
   selectAllCheckboxes = isSelected => {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
-      // BONUS: Can you explain why we pass updater function to setState instead of an object?
       this.setState(prevState => ({
         checkboxes: {
           ...prevState.checkboxes,
@@ -69,26 +68,6 @@ class CheckboxRender extends Component {
           <div className="col-sm-12">
             <form onSubmit={this.handleFormSubmit}>
               {this.createCheckboxes()}
-
-              <div className="form-group mt-2">
-                <button
-                  type="button"
-                  className="btn btn-outline-primary mr-2"
-                  onClick={this.selectAll}
-                >
-                  Select All
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-primary mr-2"
-                  onClick={this.deselectAll}
-                >
-                  Deselect All
-                </button>
-                <button type="submit" className="btn btn-primary">
-                  Save
-                </button>
-              </div>
             </form>
           </div>
         </div>
