@@ -45,4 +45,4 @@ return(
   )
 }
 
-export default NewDestination
+export default NewDestination;

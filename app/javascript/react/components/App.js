@@ -5,8 +5,8 @@ import '../../../assets/stylesheets/welcome.scss'
 import Welcome from './Welcome'
 import NewDestinationForm from './NewDestinationForm'
 import StatesListContainer from './StatesListContainer'
-import DestinationShowContainer from './DestinationShowContainer'
 import DestinationShow from './DestinationShow'
+import DestinationShowContainer from './DestinationShowContainer'
 
 export const App = (props) => {
   return (
@@ -15,7 +15,7 @@ export const App = (props) => {
         <Switch>
           <Route exact path="/destinations/:id" component={DestinationShowContainer} />
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/destinations/new" component={NewDestinationForm} />
+          <Route exact path="/destinations/new" component={NewDestination} />
           <Route exact path="/states" component={StatesListContainer} />
         </Switch>
       </BrowserRouter>

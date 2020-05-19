@@ -36,4 +36,4 @@ const DestinationShowContainer = (props) => {
   )
 }
 
-export default DestinationShowContainer
+export default DestinationShowContainer;
