@@ -29,8 +29,8 @@ const DestinationShowContainer = (props) => {
 
   return(
     <div>
-      <DestinationShowContainer
-      destinationObject={destination}
+      <DestinationShow
+        destinationObject={destination}
       />
     </div>
   )
