@@ -6,6 +6,7 @@ import Welcome from './Welcome'
 import NewDestinationForm from './NewDestinationForm'
 import StatesListContainer from './StatesListContainer'
 import DestinationShowContainer from './DestinationShowContainer'
+import DestinationShow from './DestinationShow'
 
 export const App = (props) => {
   return (
