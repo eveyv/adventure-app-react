@@ -5,7 +5,7 @@ const DestinationShow = ({ destinationObject }) => {
 
   return(
     <div>
-      <h2> {name},// {activities} </h2>
+      <h2> {name}, {activities} </h2>
     </div>
   )
 }
