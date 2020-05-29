@@ -3,7 +3,6 @@ import _ from "lodash"
 import ErrorList from "./ErrorList"
 import CheckboxRender from './CheckboxRender'
 
-
 const NewDestinationForm = props => {
   const [ errors, setErrors ] = useState({})
   const [ newDestination, setNewDestination ] = useState({
@@ -15,7 +14,6 @@ const NewDestinationForm = props => {
     price: "",
     website: "",
   })
-
 
   const handleInputChange = event => {
     setNewDestination({
@@ -70,15 +68,17 @@ const NewDestinationForm = props => {
             />
           </label>
           <CheckboxRender
+          onChange={handleInputChange}
+            onsubmit={this.handleSubmit}
           />
           <label className="form-text">
             * State:
               <select
                 id="state"
+                placeholder="Please select a state."
                 name="state"
                 value={newDestination.state}
                 onChange={handleInputChange}>
-                  <option disabled selected value> -- select a state -- </option>
                   <option value="Connecticut">Connecticut</option>
                   <option value="Maine">Maine</option>
                   <option value="Massachusetts">Massachusetts</option>
@@ -118,7 +118,7 @@ const NewDestinationForm = props => {
                 />
               </label>
               <label className="form-text">
-                Is there a website?
+                Link to website?
                 <input
                   id="website"
                   type="text"
