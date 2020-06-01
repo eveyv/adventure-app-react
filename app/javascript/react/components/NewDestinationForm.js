@@ -5,6 +5,7 @@ import CheckboxRender from './CheckboxRender'
 
 const NewDestinationForm = props => {
   const [ errors, setErrors ] = useState({})
+  const [ value, setValue ] = useState({})
   const [ newDestination, setNewDestination ] = useState({
     name: "",
     activities: "",
@@ -21,6 +22,7 @@ const NewDestinationForm = props => {
       [event.currentTarget.id]: event.currentTarget.value
     })
   }
+
 
   const validFormSubmission = () => {
     let submitErrors = {}
@@ -68,8 +70,7 @@ const NewDestinationForm = props => {
             />
           </label>
           <CheckboxRender
-          onChange={handleInputChange}
-            onsubmit={this.handleSubmit}
+            value={this.value}
           />
           <label className="form-text">
             * State:
@@ -128,8 +129,8 @@ const NewDestinationForm = props => {
                 </input>
               </label>
               <input
-              type="submit"
-              className="btn"
+                type="submit"
+                className="btn"
               />
         </form>
 

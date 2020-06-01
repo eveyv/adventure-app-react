@@ -13,9 +13,9 @@ class CheckboxRender extends Component {
       {}
     )
   };
+
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
-
     this.setState(prevState => ({
       checkboxes: {
         ...prevState.checkboxes,
@@ -23,18 +23,6 @@ class CheckboxRender extends Component {
       }
     }));
   };
-
-  selectAllCheckboxes = isSelected => {
-    Object.keys(this.state.checkboxes).forEach(checkbox => {
-      this.setState(prevState => ({
-        checkboxes: {
-          ...prevState.checkboxes,
-          [checkbox]: isSelected
-        }
-      }));
-    });
-  };
-
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
@@ -46,11 +34,12 @@ class CheckboxRender extends Component {
       });
   };
 
+
   createCheckbox = option => (
     <Checkbox
       label={option}
       isSelected={this.state.checkboxes[option]}
-      value={this.state.name}
+      value={option}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
       onSubmit={this.handleFormSubmit}
