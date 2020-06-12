@@ -43,6 +43,7 @@ class CheckboxRender extends Component {
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
       onSubmit={this.handleFormSubmit}
+      id={option}
     />
   );
 
