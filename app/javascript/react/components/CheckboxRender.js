@@ -39,7 +39,6 @@ class CheckboxRender extends Component {
     <Checkbox
       label={option}
       isSelected={this.state.checkboxes[option]}
-      value={option}
       onCheckboxChange={this.handleCheckboxChange}
       key={option}
       onSubmit={this.handleFormSubmit}

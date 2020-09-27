@@ -5,7 +5,6 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
     <label>
       <input
         type="checkbox"
-        value={label}
         name={label}
         checked={isSelected}
         onChange={onCheckboxChange}

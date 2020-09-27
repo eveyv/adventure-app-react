@@ -56,6 +56,10 @@ const NewDestinationForm = props => {
       }
     }
 
+  handleValueChange = (event) => {
+    if ()
+  }
+
   return(
     <form className="destination-form" onSubmit={handleSubmit}>
       <ErrorList errors={errors} />
@@ -65,7 +69,7 @@ const NewDestinationForm = props => {
             id="name"
             type="text"
             name="name"
-            value={newDestination.name}
+            value=""
             onChange={handleInputChange}
             />
           </label>
