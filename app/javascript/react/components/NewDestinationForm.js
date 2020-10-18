@@ -54,11 +54,7 @@ const NewDestinationForm = props => {
           website: "",
         })
       }
-    }
-
-  handleValueChange = (event) => {
-    if ()
-  }
+    };
 
   return(
     <form className="destination-form" onSubmit={handleSubmit}>
