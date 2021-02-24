@@ -72,10 +72,10 @@ const NewDestinationForm = props => {
         * State:
           <select
             id="state"
-            placeholder="Please select a state."
             name="state"
             value={newDestination.state}
             onChange={handleInputChange}>
+              <option></option>
               <option value="Connecticut">Connecticut</option>
               <option value="Maine">Maine</option>
               <option value="Massachusetts">Massachusetts</option>
@@ -87,11 +87,11 @@ const NewDestinationForm = props => {
         <label className="form-text">
         * Activity:
           <select
-            id="state"
-            placeholder="Select an activity"
-            name="state"
+            id="activities"
+            name="activities"
             value={newDestination.activities}
             onChange={handleInputChange}>
+              <option></option>
               <option value="Snowmobiling">Snowmobiling</option>
               <option value="Dog-walking">Dog-walking</option>
               <option value="Off-Roading">Off-roading</option>
