@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Checkbox from "./Checkbox";
+import React, { Component, useState } from "react";
 
-const OPTIONS = [ "Hiking", "Boating/Kayaking", "Camping", "Dog Park", "Jogging", "Skiing/Snowboarding", "Snowmobiling", "Rock-climbing", "Off-roading/ATV" ]
+const OPTIONS = [ "Hiking", "Boating/Kayaking", "Camping", "Dog Park", "Jogging", "Skiing/Snowboarding", "Snowmobiling", "Rock-climbing", "Off-roading/ATV",  ]
+
+let activitiesArray = []
 
 class CheckboxRender extends Component {
   state = {
@@ -30,7 +31,7 @@ class CheckboxRender extends Component {
     Object.keys(this.state.checkboxes)
       .filter(checkbox => this.state.checkboxes[checkbox])
       .forEach(checkbox => {
-        console.log(checkbox, "is selected.");
+        activitiesArray << value
       });
   };
 
