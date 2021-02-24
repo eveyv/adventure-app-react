@@ -2,9 +2,12 @@ import React, { useState }  from 'react'
 import _ from "lodash"
 import ErrorList from "./ErrorList"
 
+
 const NewDestinationForm = props => {
+
+
+  const [shouldRedirect, setShouldRedirect] = useState(false)
   const [ errors, setErrors ] = useState({})
-  const [ value, setValue ] = useState({})
   const [ newDestination, setNewDestination ] = useState({
     name: "",
     activities: "",
@@ -38,25 +41,36 @@ const NewDestinationForm = props => {
     return _.isEmpty(submitErrors)
   }
 
-  const handleSubmit = (event) => {
-      event.preventDefault()
-      let formPayload = newDestination;
-      if (validFormSubmission()) {
-        props.onSubmit(formPayload)
-        setNewDestination({
-          name: "",
-          activities: "",
-          state: "",
-          address: "",
-          cost: "",
-          price: "",
-          website: "",
-        })
+  const sendAway = (formPayload) => {
+    fetch('/api/v1/destinations.json', {
+      method: "POST",
+      body: JSON.stringify(formPayload),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
       }
-    };
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`
+        error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      setShouldRedirect(true)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+    }
+  if(shouldRedirect) {
+    return <Redirect to="/" />
+  }
 
   return(
-    <form className="destination-form" onSubmit={handleSubmit}>
+    <form className="destination-form" onSubmit={validFormSubmission}>
       <ErrorList errors={errors} />
       <label className="form-text">
         * Location Name:
@@ -123,16 +137,6 @@ const NewDestinationForm = props => {
             />
           </label>
           <label className="form-text">
-            If there is a charge, how much is it?
-            <input
-              id="price"
-              type="text"
-              name="price"
-              value={newDestination.price}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label className="form-text">
             Link to website?
             <input
               id="website"
@@ -145,6 +149,7 @@ const NewDestinationForm = props => {
           <input
             type="submit"
             className="btn"
+            onSubmit={sendAway(newDestination)}
           />
         </form>
 
