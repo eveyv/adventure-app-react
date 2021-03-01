@@ -70,88 +70,91 @@ const NewDestinationForm = props => {
   }
 
   return(
-    <form className="destination-form" onSubmit={validFormSubmission}>
-      <ErrorList errors={errors} />
-      <label className="form-text">
-        * Location Name:
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={newDestination.name}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label className="form-text">
-        * State:
-          <select
-            id="state"
-            name="state"
-            value={newDestination.state}
-            onChange={handleInputChange}>
-              <option></option>
-              <option value="Connecticut">Connecticut</option>
-              <option value="Maine">Maine</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="New Hampshire">New Hampshire</option>
-              <option value="Rhode Island">Rhode Island</option>
-              <option value="Vermont">Vermont</option>
-          </select>
-        </label>
+    <div>
+      <h1> Add a Location </h1>
+      <form className="destination-form" onSubmit={validFormSubmission}>
+        <ErrorList errors={errors} />
         <label className="form-text">
-        * Activity:
-          <select
-            id="activities"
-            name="activities"
-            value={newDestination.activities}
-            onChange={handleInputChange}>
-              <option></option>
-              <option value="Snowmobiling">Snowmobiling</option>
-              <option value="Dog-walking">Dog-walking</option>
-              <option value="Off-Roading">Off-roading</option>
-              <option value="Boating">Boating</option>
-              <option value="Hiking">Hiking</option>
-              <option value="Running">Running</option>
-              <option value="Skiing">Skiing</option>
-              <option value="Other">Other</option>
-          </select>
-        </label>
-        <label className="form-text">
-          * Access Point (Street Address):
+          * Location Name:
           <input
-            id="address"
+            id="name"
             type="text"
-            name="address"
-            value={newDestination.address}
+            name="name"
+            value={newDestination.name}
             onChange={handleInputChange}
           />
         </label>
+        <label className="form-text">
+          * State:
+            <select
+              id="state"
+              name="state"
+              value={newDestination.state}
+              onChange={handleInputChange}>
+                <option></option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Maine">Maine</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="Vermont">Vermont</option>
+            </select>
+          </label>
           <label className="form-text">
-            Is there a fee?
+          * Activity:
+            <select
+              id="activities"
+              name="activities"
+              value={newDestination.activities}
+              onChange={handleInputChange}>
+                <option></option>
+                <option value="Snowmobiling">Snowmobiling</option>
+                <option value="Dog-walking">Dog-walking</option>
+                <option value="Off-Roading">Off-roading</option>
+                <option value="Boating">Boating</option>
+                <option value="Hiking">Hiking</option>
+                <option value="Running">Running</option>
+                <option value="Skiing">Skiing</option>
+                <option value="Other">Other</option>
+            </select>
+          </label>
+          <label className="form-text">
+            * Access Point (Street Address):
             <input
-              id="cost"
+              id="address"
               type="text"
-              name="cost"
-              value={newDestination.cost}
+              name="address"
+              value={newDestination.address}
               onChange={handleInputChange}
             />
           </label>
-          <label className="form-text">
-            Link to website?
+            <label className="form-text">
+              Is there a fee?
+              <input
+                id="cost"
+                type="text"
+                name="cost"
+                value={newDestination.cost}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label className="form-text">
+              Link to website?
+              <input
+                id="website"
+                type="text"
+                name="website"
+                value={newDestination.website}
+                onChange={handleInputChange}>
+              </input>
+            </label>
             <input
-              id="website"
-              type="text"
-              name="website"
-              value={newDestination.website}
-              onChange={handleInputChange}>
-            </input>
-          </label>
-          <input
-            type="submit"
-            className="btn"
-            onSubmit={sendAway(newDestination)}
-          />
-        </form>
+              type="submit"
+              className="btn"
+              onSubmit={sendAway(newDestination)}
+            />
+          </form>
+        </div>
 
   )
 }
