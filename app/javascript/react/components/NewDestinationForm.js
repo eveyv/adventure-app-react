@@ -113,7 +113,7 @@ const NewDestinationForm = props => {
               <option value="Hiking">Hiking</option>
               <option value="Running">Running</option>
               <option value="Skiing">Skiing</option>
-              <option value="Other">Skiing</option>
+              <option value="Other">Other</option>
           </select>
         </label>
         <label className="form-text">
