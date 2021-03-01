@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 body, header {
-  background-color: #228B22;
   color: white;
   text-align: center;
   font-family: "Fredoka One", sans-serif;
+  background-image: url('https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_1280.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Fredoka One", sans-serif;
 }
+
 
 .link {
   background-color: white;
@@ -37,4 +42,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-text {
   text-align: left;
+  color: #fff;
+}
+
+.logo-text:hover {
+  color: #fff;
 }
