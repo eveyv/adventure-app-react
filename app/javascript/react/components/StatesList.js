@@ -1,13 +1,45 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, Redirect } from 'react-router-dom'
+import StateObject from './StateObject'
 
-const StatesList = ({state}) => {
+const StatesList = props => {
+  const [shouldRedirect, setShouldRedirect] = useState(false)
+  const [stats, setStats] = useState([])
+  let [error, setError ] = useState([])
+  useEffect(() => {
+    fetch('/api/v1/states.json')
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+          throw error
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(stateData => {
+      setStats(stateData)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }, [])
 
-  let { id, name, abbreviation } = state
+  const stateList = stats.map(state => {
+    return(
+      <StateObject 
+        key={state.id}
+        state={state}
+        name={state.name}
+        abbreviation={state.abbreviation}
+      />
+    )
+  })
 
   return(
-    <div className="cell large-12 medium-12 small-12" key={id}>
-      <Link to={`/states/${state.id}`} className="state-names"> {name} </Link>
+    <div>
+      { stateList }
     </div>
   )
 }
