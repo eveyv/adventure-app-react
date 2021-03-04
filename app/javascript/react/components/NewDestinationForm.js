@@ -1,4 +1,5 @@
 import React, { useState }  from 'react'
+import { Link } from 'react-router-dom'
 import _ from "lodash"
 import ErrorList from "./ErrorList"
 
@@ -72,6 +73,7 @@ const NewDestinationForm = props => {
   return(
     <div>
       <h1> Add a Location </h1>
+      <Link to={`/`} className="link"> Home </Link>
       <form className="destination-form" onSubmit={validFormSubmission}>
         <ErrorList errors={errors} />
         <label className="form-text">
@@ -150,7 +152,7 @@ const NewDestinationForm = props => {
             </label>
             <input
               type="submit"
-              className="btn"
+              className="link"
               onSubmit={sendAway(newDestination)}
             />
           </form>

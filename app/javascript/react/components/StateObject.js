@@ -6,7 +6,7 @@ const StateObject = ({ state }) => {
 
   return(
     <div key={id} className="state-list">
-      <Link to={`/states/${state.id}`} className="link-to"> {state.name} </Link>
+      <Link to={`/states/${state.id}`} className="link"> {state.name} </Link>
     </div>
   )
 }
