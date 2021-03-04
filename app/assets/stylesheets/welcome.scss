@@ -9,6 +9,7 @@ body, header {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  min-height:max-content;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,7 +33,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   padding-left: 5px;
   padding-right:5px;
-  cursor: alias;
 }
 
 .balance-home-header {
