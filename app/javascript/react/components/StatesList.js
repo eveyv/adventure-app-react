@@ -39,7 +39,17 @@ const StatesList = props => {
 
   return(
     <div>
-      { stateList }
+      <h1>
+        The Wonderful States of New England
+      </h1>
+      <div>
+        { stateList }
+      </div>
+      <br />
+      <br />
+      <br />
+
+      <Link to={`/`} className="link"> Home </Link>
     </div>
   )
 }

@@ -11,6 +11,8 @@ const Welcome = (props) => {
       <div className="bg-img container">
         <h1 className="balance-home-header">Welcome!</h1>
         <Link to={`/destinations/new`} className="link"> Add a Location</Link>
+        <br />
+        <Link to={`/states`} className="link"> Find Your State</Link>
     </div>
   )
 }
