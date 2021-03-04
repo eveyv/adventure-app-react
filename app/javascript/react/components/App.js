@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import '../../../assets/stylesheets/welcome.scss'
 import Welcome from './Welcome'
-import NewDestination from './NewDestination'
 import NewDestinationForm from './NewDestinationForm'
 import DestinationShow from './DestinationShow'
 import DestinationShowContainer from './DestinationShowContainer'
