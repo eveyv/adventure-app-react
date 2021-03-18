@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'bulma'
 import { Link } from 'react-router-dom'
 import '../../../assets/stylesheets/welcome.scss'
 import '../../../assets/stylesheets/bg-img.scss'
